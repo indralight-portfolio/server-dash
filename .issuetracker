@@ -1,0 +1,7 @@
+# Integration with Issue Tracker
+#
+# (note that '\' need to be escaped).
+
+[issuetracker "Jira Rule"]
+  regex = "DASH-(\\d+)"
+  url = "http://jira.allm.co.kr:8000/browse/DASH-$1"

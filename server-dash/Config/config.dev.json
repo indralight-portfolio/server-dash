@@ -1,0 +1,54 @@
+{
+  "Server": {
+    "IsPrivate": false,
+    "MatchServerEndpoint": "dev-match.dash.com:8084"
+  },
+  "Rds": {
+    "GameDB": {
+      "ConnectionString": "Server=dev.cao5wtobtbcq.ap-northeast-2.rds.amazonaws.com;Port=3306;Uid=game;Pwd=ks$5601!;Database=GameDB;maximumpoolsize=30;"
+    }
+  },
+  "Redis": {
+    "Game": {
+      "Hosts": [
+        {
+          "Host": "dev.myg9m8.0001.apn2.cache.amazonaws.com",
+          "Port": "6379"
+        }
+      ]
+    },
+    "Monitor": {
+      "Hosts": [
+        {
+          "Host": "dev.myg9m8.0001.apn2.cache.amazonaws.com",
+          "Port": "6379"
+        }
+      ]
+    }
+  },
+  "BattleServer": {
+    "Active": false,
+    "ArenaRecord": {
+      "Recorder": "S3",
+      "LoggingStatistics": true,
+      "RecordBytes": true,
+      "S3Bucket": "dash.replay.apn2",
+      "S3Path": "dev",
+      "DDBTableSuffix": "dev"
+    },
+    "CheatEnable": true
+  },
+  "LobbyServer": {
+    "Active": false
+  },
+  "MatchServer": {
+    "Active": false
+  },
+  "SocialServer": {
+    "Active": false
+  },
+  "Check": {
+    "ServiceStateUrl": "",
+    "IgnoreVersion": true
+  }
+}

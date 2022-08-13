@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>server_dash</RootNamespace>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="sh ./Scripts/makeVersion.sh" Condition=" '$(OS)' == 'Unix' " />
+    <Exec Command="./Scripts/makeVersion.bat" Condition=" '$(OS)' != 'Unix' " />
+  </Target>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;Common_NetCore;Common_Server;Common_Mobile</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;Common_NetCore;Common_Server;Common_Mobile</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.CloudWatch" Version="3.3.108.1" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.106.33" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.111.26" />
+    <PackageReference Include="MessagePack.AspNetCoreMvcFormatter" Version="2.1.115" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6" />      
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dash\Dash.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BuildVersion.cs" />
+    <Compile Include="BuildVersion.cs" />
+    <Compile Include="..\Lib-Dash\Dash\Server\Dao\CustomScaffolding.cs" />
+    <None Remove="**\*.meta" />
+    <None Remove="**\.git*" />
+    <None Remove="**\*.asmdef" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Config\config.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Config\NLog.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="meta.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <NoWarn>$(NoWarn);0109</NoWarn>
+  </PropertyGroup>
+</Project>

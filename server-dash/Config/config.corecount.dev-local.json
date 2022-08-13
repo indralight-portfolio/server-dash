@@ -1,0 +1,12 @@
+{
+  "BattleServer": {
+    "CoreCount": 2
+  },
+  "MatchServer": {
+    "CoreCount": 2
+
+  },
+  "SocialServer": {
+    "CoreCount": 2
+  }
+}

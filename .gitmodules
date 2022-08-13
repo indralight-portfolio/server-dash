@@ -1,0 +1,6 @@
+[submodule "Data-Dash"]
+	path = Data-Dash
+	url = https://github.com/g101/data-dash
+[submodule "Lib-Dash"]
+	path = Lib-Dash
+	url = https://github.com/g101/lib-dash

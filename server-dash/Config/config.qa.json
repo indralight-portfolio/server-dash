@@ -1,0 +1,61 @@
+{
+  "Server": {
+    "IsPrivate": false,
+    "MatchServerEndpoint": ""
+  },
+  "Rds": {
+    "GameDB": {
+      "ConnectionString": ""
+    }
+  },
+  "Redis": {
+    "Game": {
+      "Hosts": [
+        {
+          "Host": "",
+          "Port": "6379"
+        }
+      ]
+    },
+    "Monitor": {
+      "Hosts": [
+        {
+          "Host": "",
+          "Port": "6379"
+        }
+      ]
+    }
+  },
+  "BattleServer": {
+    "Active": false,
+    "ArenaRecord": {
+      "Recorder": "S3",
+      "LoggingStatistics": true,
+      "RecordBytes": true,
+      "S3Bucket": "",
+      "S3Path": "qa",
+      "DDBTableSuffix": "qa"
+    },
+    "CheatEnable": true
+  },
+  "LobbyServer": {
+    "Active": false,
+    "Billing": {
+      "DDBTableSuffix": "qa"
+    }
+  },
+  "MatchServer": {
+    "Active": false
+  },
+  "SocialServer": {
+    "Active": false
+  },
+  "Check": {
+    "ServiceStateUrl": ""
+  },
+  "AWS": {
+    "Default": {
+      "Region": "us-west-2"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+namespace server_dash
+{
+    public class BuildVersion
+    {
+        public static string Version = "$Version$";
+        public static string RevServer = "$RevServer$";
+        public static string RevDash = "$RevDash$";
+        public static string RevData = "$RevData$";
+
+        public static new string ToString()
+        {
+            return $"{Version}/{RevServer}/{RevDash}/{RevData}";
+        }
+    }
+}

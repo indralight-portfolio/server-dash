@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "server-dash": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "dev-local"
+      }
+    }
+  }
+}

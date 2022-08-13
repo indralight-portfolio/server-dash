@@ -1,0 +1,95 @@
+{
+  "Server": {
+    "ResourcePath": "../Data-Dash/Common",
+    "IsPrivate": true,
+    "MatchServerEndpoint": "127.0.0.1:8084"
+  },
+  "Rds": {
+    "GameDB": {
+      "ConnectionString": "",
+      "DatabaseName": "GameDB"
+    }
+  },
+  "Redis": {
+    "Game": {
+      "Hosts": [
+        {
+          "Host": "",
+          "Port": "6379"
+        }
+      ],
+      "Password": "",
+      "Ssl": false,
+      "Database": 0,
+      "AllowAdmin": true,
+      "ConnectTimeout": 6000,
+      "ConnectRetry": 0
+    },
+    "Monitor": {
+      "Hosts": [
+        {
+          "Host": "",
+          "Port": "6379"
+        }
+      ],
+      "Password": "",
+      "Ssl": false,
+      "Database": 1,
+      "AllowAdmin": true,
+      "ConnectTimeout": 6000,
+      "ConnectRetry": 0
+    },
+    "RedisExConfig": {
+      "IsKeyExpire": true,
+      "KeyExpireSeconds": 3600
+    }
+  },
+  "BattleServer": {
+    "Active": true,
+    "Port": 8081,
+    "ArenaRecord": {
+      "Recorder": "S3",
+      "LoggingStatistics": true,
+      "RecordBytes": true,
+      "S3Bucket": "",
+      "S3Path": "dev",
+      "DDBTableSuffix": "dev"
+    },
+    "AntiHack": {
+      "AllowHack": true
+    },
+    "CheatEnable": true
+  },
+  "LobbyServer": {
+    "Active": true,
+    "Port": 8082,
+    "Billing": {
+      "AppStoreVerifyReceiptUrl": "https://sandbox.itunes.apple.com/verifyReceipt",
+      "DDBTableSuffix": "dev"
+    }
+  },
+  "MatchServer": {
+    "Active": true,
+    "Port": 8084,
+    "WebHostPort": 8083
+  },
+  "SocialServer": {
+    "Active": true,
+    "Port": 8085
+  },
+  "Check": {
+    "ServiceStateUrl": "",
+    "WhiteClientList": [ "" ],
+    "AdminServerList": [ "" ]
+  },
+  "AWS": {
+    "Default": {
+      "AccessKey": "",
+      "SecretKey": "",
+      "Region": "ap-northeast-2"
+    }
+  },
+  "Cheat": {
+    "AutoAccountCreate": true
+  }
+}

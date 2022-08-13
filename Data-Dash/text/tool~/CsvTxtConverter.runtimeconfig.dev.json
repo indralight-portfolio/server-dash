@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\indra.DESKTOP-I20PBUN\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\indra.DESKTOP-I20PBUN\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ]
+  }
+}

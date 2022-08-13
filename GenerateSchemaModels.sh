@@ -1,0 +1,2 @@
+dotnet ef dbcontext scaffold "server=dev.cao5wtobtbcq.ap-northeast-2.rds.amazonaws.com;user id=game;password=ks\$5601!;port=3306;database=GameDB" Pomelo.EntityFrameworkCore.MySql -v -f --project Dash --data-annotations --output-dir "../Lib-Dash/Dash/Model/Rdb" --context-dir "../Lib-Dash/Dash/Server/Dao"
+echo "GenerateSchemaModels Done."

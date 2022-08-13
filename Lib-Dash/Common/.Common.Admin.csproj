@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>TRACE;DEBUG;Common_NetCore;Common_Server;Admin_Server</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>TRACE;RELEASE;Common_NetCore;Common_Server;Admin_Server</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.8.8" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.51.0" />
+    <PackageReference Include="MessagePack" Version="2.2.85" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NLog" Version="4.7.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="**\*.meta" />
+    <None Remove="**\.git*" />
+    <None Remove="**\*.asmdef" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\Libraries\Unity.Mathematics.dll</HintPath>
+      <Aliases></Aliases>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);0108</NoWarn>
+    <NoWarn>$(NoWarn);0693</NoWarn>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <AssemblyName>Common</AssemblyName>
+    <RootNamespace>Common</RootNamespace>
+  </PropertyGroup>
+</Project>
